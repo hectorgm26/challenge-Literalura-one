@@ -64,14 +64,81 @@ El archivo `pom.xml` que se encuentra en el proyecto contiene las siguientes dep
 
 ## ¿Cómo ejecutar la aplicación?
 
-1. Clona o descarga este repositorio en tu máquina local.
-2. Asegúrate de tener **Java 17** instalado.
-3. Configura la base de datos PostgreSQL según sea necesario.
-4. Ejecuta el proyecto con el siguiente comando:
+1. **Clona o descarga este repositorio en tu máquina local.**
+
+   Puedes clonar este repositorio usando el siguiente comando:
+
+   ```bash
+   git clone https://github.com/tu_usuario/LiterAlura-Challenge.git
+   ```
+
+2. **Asegúrate de tener Java 17 instalado.**
+
+   Para comprobar si tienes Java 17 instalado, ejecuta el siguiente comando en tu terminal:
+
+   ```bash
+   java -version
+   ```
+
+   Si no tienes Java 17, puedes descargarlo e instalarlo desde el [sitio oficial de Oracle](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html).
+
+3. **Configura la base de datos PostgreSQL según sea necesario.**
+
+   Debes configurar la conexión a tu base de datos PostgreSQL en el archivo `src/main/resources/application.properties`. Abre este archivo y modifica las siguientes líneas con tus credenciales de base de datos:
+
+   ```properties
+   spring.application.name=LiterAlura-Challenge
+   spring.datasource.url=jdbc:postgresql://${DB_HOST}/LiterAlura-Challenge
+   spring.datasource.username=${DB_USER}
+   spring.datasource.password=${DB_PASSWORD}
+   spring.datasource.driver-class-name=org.postgresql.Driver
+   hibernate.dialect=org.hibernate.dialect.HSQLDialect
+   spring.jpa.hibernate.ddl-auto=update
+   spring.jpa.show-sql=true
+   spring.jpa.format-sql=true
+   ```
+
+   - **${DB_HOST}**: Reemplázalo por el host de tu base de datos PostgreSQL. Si estás trabajando en tu máquina local, usa `localhost`.
+   - **${DB_USER}**: Reemplázalo por el nombre de usuario de tu base de datos PostgreSQL.
+   - **${DB_PASSWORD}**: Reemplázalo por la contraseña correspondiente al nombre de usuario de la base de datos.
+
+   **Ejemplo**:
+
+   ```properties
+   spring.application.name=LiterAlura-Challenge
+   spring.datasource.url=jdbc:postgresql://localhost/LiterAlura-Challenge
+   spring.datasource.username=postgres
+   spring.datasource.password=mi_contraseña
+   spring.datasource.driver-class-name=org.postgresql.Driver
+   hibernate.dialect=org.hibernate.dialect.HSQLDialect
+   spring.jpa.hibernate.ddl-auto=update
+   spring.jpa.show-sql=true
+   spring.jpa.format-sql=true
+   ```
+
+   **Pasos para configurar la base de datos PostgreSQL**:
+   1. Instala PostgreSQL si aún no lo tienes. Puedes descargarlo desde [aquí](https://www.postgresql.org/download/).
+   2. Crea una base de datos llamada `LiterAlura-Challenge` en tu servidor PostgreSQL:
+      ```sql
+      CREATE DATABASE "LiterAlura-Challenge";
+      ```
+   3. Asegúrate de que el usuario y la contraseña configurados en el archivo `application.properties` coincidan con los de tu base de datos.
+
+4. **Ejecuta el proyecto con el siguiente comando:**
+
+   Una vez que hayas configurado todo, puedes ejecutar la aplicación utilizando el siguiente comando de Maven:
 
    ```bash
    mvn spring-boot:run
    ```
+
+   Esto iniciará la aplicación. Al ejecutar el programa, se mostrará un menú de opciones en la consola donde el usuario podrá interactuar y obtener información sobre libros y autores. Algunas de las opciones incluyen la búsqueda de libros por título, autor, idioma y la consulta sobre autores vivos.
+
+## Estructura del Proyecto
+
+- **`src/main/java/com/aluracursos/literaluraChallenge`**: Contiene las clases principales de la aplicación.
+- **`src/main/resources/application.properties`**: Configuración de la base de datos y otras propiedades de la aplicación.
+- **`src/test/java/com/aluracursos/literaluraChallenge`**: Pruebas unitarias (si aplicara).
 
 5. Al ejecutar la aplicación, se mostrará un menú de opciones en la consola. El usuario podrá interactuar con las diferentes opciones que proporcionan información sobre libros y autores.
 
