@@ -168,8 +168,6 @@ La aplicación utiliza **PostgreSQL** para almacenar la información sobre los l
 
 ## Conclusión
 
-Conclusión
-
 Este proyecto del catálogo de libros fue una excelente oportunidad para aplicar mis conocimientos de Java y Spring Boot, además de trabajar con APIs externas en tiempo real. La integración con la API de libros me permitió profundizar en el manejo de datos JSON y su conversión en objetos Java, a la vez que optimizaba el flujo de interacción con los usuarios a través de una interfaz de consola.
 
 Implementar funcionalidades como la búsqueda de libros por título, autor, idioma y autores vivos en un rango de años fue un reto interesante que fortaleció mis habilidades en programación orientada a objetos y la manipulación de datos complejos. Además, la implementación de una lógica robusta para el manejo de errores y la validación de entradas me permitió ofrecer una experiencia más amigable y fluida al usuario.
