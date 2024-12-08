@@ -79,6 +79,8 @@ El archivo `pom.xml` que se encuentra en el proyecto contiene las siguientes dep
 
 La búsqueda de libros se realiza interactuando con una **API externa** (Gutendex) que permite obtener información detallada sobre libros disponibles de dominio público. La aplicación obtiene los datos de la API y los guarda en una base de datos local para su posterior consulta.
 
+Para más información de la API Gutendex, visitar su sitio web oficial: https://gutendex.com/
+
 ### Ejemplo de interacción:
 
 Al seleccionar la opción "1 - Buscar libro por su Título", el sistema pedirá al usuario que ingrese el título de un libro, buscará el libro a través de la API y mostrará el primer libro encontrado.
